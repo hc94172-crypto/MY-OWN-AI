@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build VectorDB",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "main.cpp",
+                "-std=c++17",
+                "-O2",
+                "-pthread",
+                "-lws2_32",
+                "-o",
+                "vectordb.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ]
+}

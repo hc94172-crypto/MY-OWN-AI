@@ -1,0 +1,5 @@
+*.exe
+*.o
+*.a
+uploads/*
+!uploads/.gitkeep

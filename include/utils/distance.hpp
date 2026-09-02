@@ -1,0 +1,25 @@
+#ifndef DISTANCE_HPP
+#define DISTANCE_HPP
+
+#include <vector>
+#include <string>
+#include <functional>
+
+constexpr int DIMS = 16;
+
+using DistFn = std::function<float(
+    const std::vector<float>&,
+    const std::vector<float>&)>;
+
+float euclidean(const std::vector<float>& a,
+                const std::vector<float>& b);
+
+float cosine(const std::vector<float>& a,
+             const std::vector<float>& b);
+
+float manhattan(const std::vector<float>& a,
+                const std::vector<float>& b);
+
+DistFn getDistFn(const std::string& metric);
+
+#endif
