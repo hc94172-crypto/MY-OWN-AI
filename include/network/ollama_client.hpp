@@ -24,7 +24,7 @@ public:
     // Kept as public fields so existing code (routes.cpp status endpoint etc.)
     // that prints ollama.embedModel / ollama.genModel still compiles.
     std::string embedModel = "gemini-embedding-001";
-    std::string genModel   = "llama-3.1-8b-instant";
+    std::string genModel   = "openai/gpt-oss-20b";
 
     OllamaClient();
 
