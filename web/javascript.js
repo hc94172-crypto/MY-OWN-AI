@@ -1,8 +1,7 @@
-
 // ════════════════════════════════════════════════════════════
 //  CONSTANTS
 // ════════════════════════════════════════════════════════════
-const API  = 'http://localhost:8080';
+const API  = '';
 const DIMS = 16;
 const COL  = { cs:'#00d9ff', math:'#b388ff', food:'#ffb74d', sports:'#69f0ae', doc:'#a6e3a1', default:'#90a4ae' };
 const DIM_COL = ['#00d9ff','#00d9ff','#00d9ff','#00d9ff','#b388ff','#b388ff','#b388ff','#b388ff',
@@ -224,7 +223,7 @@ async function runSearch() {
       if(sw>0)queryPt={x:sx/sw+(Math.random()-.5)*.015,y:sy/sw+(Math.random()-.5)*.015};
     }
     renderResults(searchResults); drawVecChart(emb);
-  } catch(_){alert('Cannot reach server — is it running on :8080?');}
+  } catch(_){alert('Cannot reach server — is it running?');}
 }
 
 document.getElementById('qInput').addEventListener('keydown',e=>{if(e.key==='Enter')runSearch();});
@@ -346,7 +345,7 @@ async function insertDocument() {
   if(!title||!text){status.textContent='⚠ Need both a title and text.';return;}
 
   btn.disabled=true; btn.textContent='Embedding…';
-  status.innerHTML='<span style="color:var(--muted)">Calling Ollama nomic-embed-text…</span>';
+  status.innerHTML='<span style="color:var(--muted)">Calling embedding model…</span>';
 
   try {
     const r=await fetch(API+'/doc/insert',{
